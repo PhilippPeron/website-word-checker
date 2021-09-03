@@ -6,6 +6,7 @@ from win10toast import ToastNotifier
 
 
 def website_word_checker():
+    """Checks if the word is in the url's html-text."""
     site = str(urllib.request.urlopen(url).read())
     if word in site:
         print(f"Word '{word}' found")
@@ -15,8 +16,9 @@ def website_word_checker():
 
 
 def notify():
-        toaster = ToastNotifier()
-        toaster.show_toast(f"Word '{word}' found", " ")
+    """Lets a notification pop up in Windows 10."""
+    toaster = ToastNotifier()
+    toaster.show_toast(f"Word '{word}' found", " ")
 
 
 if __name__ == '__main__':
